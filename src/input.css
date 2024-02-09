@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .periodic-element {
-    @apply bg-red-500 p-4 flex items-center justify-center aspect-square w-20;
+    @apply p-4 flex items-center justify-center aspect-square w-20 rounded-lg shadow-md font-bold text-2xl transition-transform hover:scale-110;
 }

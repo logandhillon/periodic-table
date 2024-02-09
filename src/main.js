@@ -1,19 +1,28 @@
+const colors = {
+    's': "#E77975", // red
+    'p': "#F3CE49", // yellow
+    'd': "#70A3F3", // blue
+    'f': "#77DB89"  // green
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    function addToPeriodicTable(element, x, y) {
-        const gridContainer = document.getElementById('periodic-table');
-        const gridItem = document.createElement('div');
-        gridItem.classList.add('periodic-element');
-        gridItem.textContent = element;
-        gridItem.style.gridRow = y;
-        gridItem.style.gridColumn = x;
-        gridContainer.appendChild(gridItem);
+    function addToPeriodicTable(symbol, x, y, block) {
+        const pTable = document.getElementById('periodic-table');
+        const element = document.createElement('div');
+        element.classList.add('periodic-element');
+        element.style.backgroundColor = colors[block];
+        element.textContent = symbol;
+        element.style.gridRow = y;
+        element.style.gridColumn = x;
+        pTable.appendChild(element);
     }
 
-    // todo: read this from periodic_table.json
-    for (let yi = 1; yi <= 10; yi++) {
-        for (let xi = 1; xi <= 18; xi++) {
-            console.log(xi, yi);
-            addToPeriodicTable(`Item ${xi},${yi}`, xi, yi);
-        }
-    }
+    fetch("resources/periodic_table.json")
+        .then(response => response.json())
+        .then(json => {
+            json.elements.forEach(element => {
+                addToPeriodicTable(element.symbol, element.xpos, element.ypos, element.block);
+            });
+        })
+        .catch(e => console.error(e));
 });
