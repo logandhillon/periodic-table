@@ -612,10 +612,6 @@ video {
   flex-grow: 1;
 }
 
-.grid-cols-\[18\] {
-  grid-template-columns: 18;
-}
-
 .flex-col {
   flex-direction: column;
 }
