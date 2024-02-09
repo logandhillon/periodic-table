@@ -6,10 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Periodic Table</title>
     <link rel="stylesheet" href="dist/output.css">
+    <script src="src/main.js"></script>
+    <script src="https://kit.fontawesome.com/5a740087a2.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    
+<body class="bg-neutral-50 text-neutral-950 flex flex-col min-h-screen">
+    <header class="bg-neutral-100 p-6">
+        <div class="container flex text-2xl items-center mx-auto">
+            <h1 class="text-3xl">Interactive Periodic Table</h1>
+            <div class="flex-grow"></div>
+            <a href="https://github.com/logandhillon/periodic-table/"><i class="fab fa-github transition-transform hover:scale-125"></i></a>
+        </div>
+    </header>
+
+    <div class="justify-center">
+        <div id="periodic-table" class="mx-auto grid grid-cols-[18] gap-2 p-4 w-fit">
+
+        </div>
+    </div>
+
+    <div class="flex-grow"></div>
+
+    <footer class="bg-neutral-950 text-neutral-50 text-center p-8 mt-16">
+        <p class="text-sm">© 2024 Logan Dhillon. This software is subject to the GPL-3.0 license.</p>
+    </footer>
 </body>
 
 </html>

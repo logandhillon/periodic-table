@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.periodic-element {
+    @apply bg-red-500 p-4 flex items-center justify-center aspect-square w-20;
+}
