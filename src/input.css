@@ -5,3 +5,7 @@
 .periodic-element {
     @apply p-4 flex items-center justify-center aspect-square w-20 rounded-lg shadow-md font-bold text-2xl transition-transform hover:scale-110;
 }
+
+a {
+    @apply hover:font-semibold transition-all hover:underline;
+}

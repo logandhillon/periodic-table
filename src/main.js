@@ -1,3 +1,5 @@
+// Copyright (c) 2024 Logan Dhillon. This software is subject to the GPL-3.0 license
+
 const colors = {
     's': "#E77975", // red
     'p': "#F3CE49", // yellow

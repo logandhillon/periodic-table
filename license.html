@@ -7,8 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Periodic Table</title>
     <link rel="stylesheet" href="dist/output.css">
-    <script src="src/main.js"></script>
     <script src="https://kit.fontawesome.com/5a740087a2.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.getElementById("license");
+            fetch("LICENSE")
+                .then(response => response.text())
+                .then(text => content.innerText = text)
+                .catch(e => content.innerText = "An error occured while fetching LICENSE: " + e);
+        });
+    </script>
 </head>
 
 <body class="bg-neutral-50 text-neutral-950 flex flex-col min-h-screen">
@@ -20,10 +28,17 @@
         </div>
     </header>
 
-    <div class="justify-center">
-        <div id="periodic-table" class="mx-auto grid gap-2 p-4 w-fit">
-
-        </div>
+    <div class="text-center p-8 max-w-[64rem] mx-auto space-y-4">
+        <h1 class="text-2xl font-bold">GNU General Public License v3.0</h1>
+        <p>
+            Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications,
+            which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors
+            provide an express grant of patent rights.
+        </p>
+        <h3 class="text-xl font-semibold">See the license agreement below.</h3>
+        <p class="font-serif" id="license">
+            
+        </p>
     </div>
 
     <div class="flex-grow"></div>
