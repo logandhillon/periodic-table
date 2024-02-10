@@ -1,12 +1,5 @@
 // Copyright (c) 2024 Logan Dhillon. This software is subject to the GPL-3.0 license
 
-const colors = {
-    's': "#E77975", // red
-    'p': "#F3CE49", // yellow
-    'd': "#70A3F3", // blue
-    'f': "#77DB89"  // green
-}
-
 /**
  * Create and add element to periodic table
  * @param {String} eName Name of element (e.g. Iron)
@@ -66,13 +59,20 @@ function addToPTable(eName, eSymbol, aMass, aNumber, x, y, block) {
     pTable.appendChild(wrapper);
 }
 
+function showError(title, body) {
+    const alert = document.getElementById("alert");
+    alert.classList.remove("-translate-y-20");
+    document.getElementById("alert-title").innerText = title;
+    document.getElementById("alert-body").innerText = body;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    fetch("resources/periodic_table.json")
+    fetch("api/data.json")
         .then(response => response.json())
         .then(json => {
             json.elements.forEach(element => {
                 addToPTable(element.name, element.symbol, element.atomic_mass, element.number, element.xpos, element.ypos, element.block);
             });
         })
-        .catch(e => console.error(e));
+        .catch(e => showError("Error while fetching periodic table API contents", e));
 });
