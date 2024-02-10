@@ -7,18 +7,18 @@ const colors = {
     'f': "#77DB89"  // green
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    function addToPeriodicTable(symbol, x, y, block) {
-        const pTable = document.getElementById('periodic-table');
-        const element = document.createElement('div');
-        element.classList.add('periodic-element');
-        element.style.backgroundColor = colors[block];
-        element.textContent = symbol;
-        element.style.gridRow = y;
-        element.style.gridColumn = x;
-        pTable.appendChild(element);
-    }
+function addToPeriodicTable(symbol, x, y, block) {
+    const pTable = document.getElementById('periodic-table');
+    const element = document.createElement('div');
+    element.classList.add('periodic-element');
+    element.style.backgroundColor = colors[block];
+    element.textContent = symbol;
+    element.style.gridRow = y;
+    element.style.gridColumn = x;
+    pTable.appendChild(element);
+}
 
+document.addEventListener('DOMContentLoaded', function () {
     fetch("resources/periodic_table.json")
         .then(response => response.json())
         .then(json => {
