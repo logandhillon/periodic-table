@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Periodic Table</title>
     <link rel="stylesheet" href="dist/output.css">
-    <script src="src/main.js"></script>
+    <!-- <script src="src/main.js"></script> -->
     <script src="https://kit.fontawesome.com/5a740087a2.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-neutral-50 text-neutral-950 flex flex-col min-h-screen">
-    <header class="bg-neutral-100 p-6">
+<body class="bg-gradient-to-tr from-black to-gray-900 text-neutral-50 flex flex-col min-h-screen">
+    <header class="bg-neutral-950 p-6">
         <div class="container flex text-2xl items-center mx-auto">
             <h1 class="text-3xl"><a href="index.html">Interactive Periodic Table</a></h1>
             <div class="flex-grow"></div>
@@ -21,8 +21,21 @@
     </header>
 
     <div class="justify-center">
-        <div id="periodic-table" class="mx-auto grid gap-2 p-4 w-fit">
-
+        <div id="periodic-table" class="mx-auto grid p-4 w-fit">
+            <!-- test element ; the style="..." is auto generated, and the class goes into an @apply tag" -->
+            <!-- TODO: make this auto generated -->
+            <div class="element-wrapper group d-block">
+                <div class="element-glow"></div>
+                <div class="element">
+                    <div class="flex text-xs">
+                        <div id="atomic-number">12</div>
+                        <div class="flex-grow"></div>
+                        <div id="atomic-mass">24.305</div>
+                    </div>
+                    <div class="font-bold text-2xl" id="symbol">Mg</div>
+                    <div class="text-xs" id="name">Magnesium</div>
+                </div>
+            </div>
         </div>
     </div>
 
