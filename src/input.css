@@ -12,7 +12,7 @@
 
 
 .d-block {
-    @apply from-cyan-500 to-violet-600 text-violet-500 hover:text-violet-400;
+    @apply from-cyan-500 to-violet-600 text-violet-500 hover:text-violet-400 ring-2 ring-violet-600 hover:ring-violet-500 rounded-lg;
 }
 
 .element {
