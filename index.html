@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Periodic Table</title>
     <link rel="stylesheet" href="dist/output.css">
-    <!-- <script src="src/main.js"></script> -->
+    <script src="src/main.js"></script>
     <script src="https://kit.fontawesome.com/5a740087a2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,22 +21,7 @@
     </header>
 
     <div class="justify-center">
-        <div id="periodic-table" class="mx-auto grid p-4 w-fit">
-            <!-- test element ; the style="..." is auto generated, and the class goes into an @apply tag" -->
-            <!-- TODO: make this auto generated -->
-            <div class="element-wrapper group d-block">
-                <div class="element-glow"></div>
-                <div class="element">
-                    <div class="flex text-xs">
-                        <div id="atomic-number">12</div>
-                        <div class="flex-grow"></div>
-                        <div id="atomic-mass">24.305</div>
-                    </div>
-                    <div class="font-bold text-2xl" id="symbol">Mg</div>
-                    <div class="text-xs" id="name">Magnesium</div>
-                </div>
-            </div>
-        </div>
+        <div id="periodic-table" class="mx-auto grid p-4 w-fit gap-2"></div>
     </div>
 
     <div class="flex-grow"></div>
